@@ -1,7 +1,26 @@
-function fn() {
-  console.log("Hello World!");
-}
+import {
+  MetakeyClient,
+  MetakeyClientError,
+  MetakeyClientParams,
+  SignMessageParams,
+  SignMessageResult,
+} from './metakey-client';
+
+import {
+  Transport,
+  TransportError,
+  BrowserExtensionTransport,
+} from './transports';
+import { WampClientError } from './wamp-client';
 
 export {
-  fn
+  Transport,
+  TransportError,
+  BrowserExtensionTransport,
+  WampClientError,
+  MetakeyClient,
+  MetakeyClientError,
+  MetakeyClientParams,
+  SignMessageParams,
+  SignMessageResult,
 };

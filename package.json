@@ -1,11 +1,18 @@
 {
-  "version": "1.0.0",
+  "version": "0.1.0",
+  "name": "@blockstrait/metakey-client",
+  "author": "Pol Moreno Yeste",
   "license": "Apache-2.0",
-  "name": "@trustchair/metakey-client-js",
-  "author": "Trustchair Ltd",
-  "private": true,
   "main": "dist/index.js",
   "types": "dist/index.d.js",
+  "keywords": [
+    "bsv",
+    "bitcoin sv"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blockstrait/metakey-client-js.git"
+  },
   "files": [
     "dist"
   ],
@@ -14,21 +21,24 @@
     "build:ts": "tsc -b .",
     "prebuild": "npm run clean",
     "clean": "rimraf -rf dist coverage docs *.tsbuildinfo",
-    "lint": "tslint --project .",
-    "lint:fix": "tslint --project . --fix",
-    "precommit": "lint-staged",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "pretty:check": "prettier --list-different \"**/*.{js,json,md,ts}\"",
+    "pretty:fix": "prettier --write \"**/*.{ts,json,md,ts}\"",
     "docs": "typedoc --out ./docs ./src/index.ts --excludeInternal"
   },
-  "tslint": {
-    "extends": "./tslint.json"
+  "dependencies": {
+    "@blockstrait/metakey-core": "^0.1.0"
   },
-  "dependencies": {},
   "devDependencies": {
-    "lint-staged": "^11.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.8.1",
+    "@typescript-eslint/parser": "^5.8.1",
+    "eslint-plugin-import": "^2.25.3",
+    "prettier": "^2.5.1",
     "rimraf": "^3.0.2",
     "tslint": "^6.1.3",
     "tslint-config-prettier": "^1.18.0",
-    "typedoc": "^0.20.36",
-    "typescript": "^4.3.2"
+    "typedoc": "^0.22.10",
+    "typescript": "^4.5.4"
   }
 }
